@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './Stats.css';
 
 const stats = [
-    { count: 10, suffix: '+', label: 'Years of Experience' },
+    { count: 5, suffix: '+', label: 'Years of Experience' },
     { count: 1500, suffix: '+', label: 'Happy Customers' },
     { count: 75, suffix: '+', label: 'Destinations Covered' },
     { count: null, display: '24/7', label: 'Customer Support' },
