@@ -1,0 +1,183 @@
+.fleet {
+    background: var(--bg-dark);
+    padding: 90px 5%;
+}
+
+.fleet-tabs {
+    display: flex;
+    gap: 12px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.fleet-tab {
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--glass-border);
+    color: var(--gray);
+    background: transparent;
+    transition: all var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.fleet-tab.active,
+.fleet-tab:hover {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #000;
+    border-color: transparent;
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.fleet-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.fleet-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border);
+    box-shadow: var(--shadow-card);
+}
+
+.fleet-img-wrap {
+    height: 200px;
+    background: linear-gradient(135deg, #0f1624, #1a2440);
+    overflow: hidden;
+    position: relative;
+}
+
+.fleet-img-wrap img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fleet-card:hover .fleet-img-wrap img {
+    transform: scale(1.08);
+}
+
+.fleet-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 5px 12px;
+    background: rgba(245, 162, 0, 0.15);
+    border: 1px solid rgba(245, 162, 0, 0.3);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.fleet-info {
+    padding: 22px;
+}
+
+.fleet-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.fleet-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.fleet-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.fleet-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.fleet-price .amount {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.fleet-price .unit {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.fleet-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-enquire {
+    flex: 1;
+    padding: 11px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-enquire:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 162, 0, 0.4);
+}
+
+.btn-call {
+    flex: 1;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color var(--transition), background var(--transition);
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-call:hover {
+    border-color: var(--teal);
+    background: rgba(0, 201, 177, 0.08);
+    color: var(--teal);
+}
+
+@media (max-width: 900px) {
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .fleet-grid {
+        grid-template-columns: 1fr;
+    }
+}
