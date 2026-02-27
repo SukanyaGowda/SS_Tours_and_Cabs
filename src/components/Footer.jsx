@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
     return (
@@ -7,7 +8,7 @@ export default function Footer() {
             <div className="footer-top">
                 <div className="footer-brand">
                     <div className="footer-logo">
-                        <div className="footer-logo-icon">🚖</div>
+                        <img src={logoImg} alt="SS Tours & Cabs" className="footer-logo-img" />
                         <div className="nav-logo-text">
                             <span>SS Tours</span>
                             <span>&amp; Cabs</span>
@@ -42,9 +43,11 @@ export default function Footer() {
 
                 <div className="footer-col">
                     <h4>Contact Us</h4>
-                    <div className="footer-contact-item"><span className="icon">📞</span><p><a href="tel:+917348969042">+91 734-8969042</a></p></div>
-                    <div className="footer-contact-item"><span className="icon">💬</span><p><a href="https://wa.me/917348969042">WhatsApp Us</a></p></div>
-                    <div className="footer-contact-item"><span className="icon">📍</span><p>Bengaluru, Karnataka, India</p></div>
+                    <div className="footer-owner">Sachin U.N</div>
+                    <div className="footer-contact-item"><span className="icon">📞</span><p><a href="tel:+917348969042">+91 73489 69042</a></p></div>
+                    <div className="footer-contact-item"><span className="icon">✉️</span><p><a href="mailto:Sachinujjani999@gmail.com">Sachinujjani999@gmail.com</a></p></div>
+                    <div className="footer-contact-item"><span className="icon">🌐</span><p><a href="http://www.sstoursandcabs.in" target="_blank" rel="noopener noreferrer">www.sstoursandcabs.in</a></p></div>
+                    <div className="footer-contact-item"><span className="icon">📍</span><p>Jnana Ganga Nagar, Bengaluru, KA 560056</p></div>
                     <div className="footer-contact-item"><span className="icon">🕒</span><p>Available 24 hours, 7 days a week</p></div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import aboutImg from '../assets/about_img.png';
 
 const highlights = [
     { icon: '✈️', title: 'Airport Transfers', desc: 'Timely, stress-free airport pickups & drops, 24/7.' },
@@ -9,10 +10,11 @@ const highlights = [
 ];
 
 export default function About() {
+    const base = import.meta.env.BASE_URL;
     return (
         <section id="about" className="about">
             <div className="about-image-wrap">
-                <img src="/about_img.png" alt="SS Tours & Cabs professional driver" loading="lazy" />
+                <img src={aboutImg} alt="SS Tours & Cabs professional driver" loading="lazy" />
                 <div className="about-image-overlay">
                     <div className="badge-since">🏆 Trusted Since 2014</div>
                 </div>

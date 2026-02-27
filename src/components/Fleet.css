@@ -134,15 +134,19 @@
 .btn-enquire {
     flex: 1;
     padding: 11px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    background: linear-gradient(135deg, #25d366, #128c7e);
     border: none;
     border-radius: 10px;
-    color: #000;
+    color: #fff;
     font-weight: 700;
     font-size: 13px;
     cursor: pointer;
     transition: transform var(--transition), box-shadow var(--transition);
     font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
 .btn-enquire:hover {
@@ -162,6 +166,10 @@
     cursor: pointer;
     transition: border-color var(--transition), background var(--transition);
     font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .btn-call:hover {
@@ -171,13 +179,34 @@
 }
 
 @media (max-width: 900px) {
+    .fleet {
+        padding: 70px 5%;
+    }
+
     .fleet-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
+    .fleet {
+        padding: 60px 4%;
+    }
+
     .fleet-grid {
         grid-template-columns: 1fr;
+    }
+
+    .fleet-tabs {
+        gap: 8px;
+    }
+
+    .fleet-tab {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .fleet-img-wrap {
+        height: 180px;
     }
 }

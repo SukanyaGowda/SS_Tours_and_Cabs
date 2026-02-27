@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -20,7 +21,7 @@ export default function Navbar() {
         <>
             <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
                 <div className="nav-logo">
-                    <div className="nav-logo-icon">🚖</div>
+                    <img src={logoImg} alt="SS Tours & Cabs" className="nav-logo-img" />
                     <div className="nav-logo-text">
                         <span>SS Tours</span>
                         <span>&amp; Cabs</span>
@@ -35,11 +36,6 @@ export default function Navbar() {
                             </a>
                         </li>
                     ))}
-                    <li>
-                        <a href="#hero" className="nav-cta" onClick={(e) => { e.preventDefault(); handleNavClick('booking'); }}>
-                            Book Now
-                        </a>
-                    </li>
                 </ul>
 
                 <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
