@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import './Fleet.css';
-import carSedan from '../assets/car_sedan.png';
 import carInnova from '../assets/car_innova.png';
 import carErtiga from '../assets/car_ertiga.png';
 import carTempo from '../assets/car_tempo.png';
 import carBus from '../assets/car_bus.png';
+import carEtios from '../assets/car_etios.png';
+import carSwiftDzire from '../assets/car_swift_dzire.png';
+import carDzireTour from '../assets/car_dzire_tour.png';
+import carAura from '../assets/car_aura.png';
 
 const cars = [
-    { name: 'Toyota Etios', category: 'sedan', img: carSedan, seats: '4+1', badge: 'Sedan' },
-    { name: 'Maruti Suzuki Swift Dzire', category: 'sedan', img: carSedan, seats: '4+1', badge: 'Sedan' },
-    { name: 'Maruti Suzuki Dzire Tour', category: 'sedan', img: carSedan, seats: '4+1', badge: 'Sedan' },
-    { name: 'Hyundai Aura', category: 'sedan', img: carSedan, seats: '4+1', badge: 'Sedan' },
+    { name: 'Toyota Etios', category: 'sedan', img: carEtios, seats: '4+1', badge: 'Sedan' },
+    { name: 'Maruti Suzuki Swift Dzire', category: 'sedan', img: carSwiftDzire, seats: '4+1', badge: 'Sedan' },
+    { name: 'Maruti Suzuki Dzire Tour', category: 'sedan', img: carDzireTour, seats: '4+1', badge: 'Sedan' },
+    { name: 'Hyundai Aura', category: 'sedan', img: carAura, seats: '4+1', badge: 'Sedan' },
     { name: 'Toyota Innova Crysta', category: 'suv', img: carInnova, seats: '6+1', badge: 'SUV' },
     { name: 'Toyota Innova', category: 'suv', img: carInnova, seats: '6+1', badge: 'SUV' },
     { name: 'Toyota Innova Hycross / Hybrid', category: 'suv', img: carInnova, seats: '6+1', badge: 'Hybrid' },
