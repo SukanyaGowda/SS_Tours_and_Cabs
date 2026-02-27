@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="footer-top">
                 <div className="footer-brand">
                     <div className="footer-logo">
-                        <img src={logoImg} alt="SS Tours & Cabs" className="footer-logo-img" />
+                        <img src={logoImg} alt="SS Tours & Cabs | Professional Cab Service Logo" className="footer-logo-img" />
                         <div className="nav-logo-text">
                             <span>SS Tours</span>
                             <span>&amp; Cabs</span>

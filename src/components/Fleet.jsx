@@ -32,9 +32,16 @@ export default function Fleet({ onEnquire }) {
                 <p className="section-sub">A wide range of well-maintained vehicles to match every need and budget.</p>
             </div>
 
-            <div className="fleet-tabs">
+            <div className="fleet-tabs" role="tablist">
                 {tabs.map(t => (
-                    <button key={t} className={`fleet-tab ${active === t ? 'active' : ''}`} onClick={() => setActive(t)}>
+                    <button
+                        key={t}
+                        className={`fleet-tab ${active === t ? 'active' : ''}`}
+                        onClick={() => setActive(t)}
+                        role="tab"
+                        aria-selected={active === t}
+                        aria-label={`Show ${t === 'all' ? 'all' : t} vehicles`}
+                    >
                         {t === 'all' ? 'All Vehicles' : t.toUpperCase() + 's'}
                     </button>
                 ))}
@@ -44,7 +51,7 @@ export default function Fleet({ onEnquire }) {
                 {filtered.map((car, i) => (
                     <div className="fleet-card" key={i}>
                         <div className="fleet-img-wrap">
-                            <img src={car.img} alt={car.name} loading="lazy" />
+                            <img src={car.img} alt={`${car.name} - Premium ${car.badge} for hire in Bengaluru`} loading="lazy" decoding="async" />
                             <span className="fleet-badge">{car.badge}</span>
                         </div>
                         <div className="fleet-info">

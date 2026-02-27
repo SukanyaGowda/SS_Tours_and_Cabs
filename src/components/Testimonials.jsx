@@ -55,8 +55,8 @@ export default function Testimonials() {
             </div>
 
             <div className="testi-controls">
-                <button className="testi-btn" onClick={() => scroll(-1)}>←</button>
-                <button className="testi-btn" onClick={() => scroll(1)}>→</button>
+                <button className="testi-btn" onClick={() => scroll('left')} aria-label="Previous testimonial">←</button>
+                <button className="testi-btn" onClick={() => scroll('right')} aria-label="Next testimonial">→</button>
             </div>
         </section>
     );

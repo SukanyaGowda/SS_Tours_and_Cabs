@@ -14,7 +14,7 @@ export default function About() {
     return (
         <section id="about" className="about">
             <div className="about-image-wrap">
-                <img src={aboutImg} alt="SS Tours & Cabs professional driver" loading="lazy" />
+                <img src={aboutImg} alt="SS Tours & Cabs professional driver" loading="lazy" decoding="async" />
                 <div className="about-image-overlay">
                     <div className="badge-since">🏆 Trusted Since 2014</div>
                 </div>

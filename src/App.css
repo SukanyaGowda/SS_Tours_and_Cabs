@@ -1,114 +1,131 @@
 .cta-banner {
-  margin: 0 5% 80px;
-  background: linear-gradient(135deg, #1a2440 0%, #0f1624 100%);
+  margin: 0 5% 100px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 60px;
+  border-radius: 40px;
+  padding: 80px 40px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-premium);
 }
 
 .cta-banner::before {
   content: '';
   position: absolute;
-  top: -80px;
-  right: -80px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(245, 162, 0, 0.12), transparent 70%);
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(245, 162, 0, 0.05) 0%, transparent 70%);
   pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cta-actions {
   display: flex;
-  gap: 16px;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-cta-call {
+  display: flex;
   align-items: center;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 2;
-}
-
-.btn-primary {
-  padding: 14px 32px;
+  gap: 12px;
+  padding: 18px 45px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  border-radius: 50px;
+  border-radius: 60px;
   color: #000;
-  font-weight: 700;
-  font-size: 15px;
-  transition: transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 6px 25px rgba(245, 162, 0, 0.35);
-  white-space: nowrap;
+  font-weight: 800;
+  font-size: 18px;
+  transition: all var(--transition);
+  box-shadow: 0 10px 30px rgba(245, 162, 0, 0.3);
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(245, 162, 0, 0.5);
+.btn-cta-call:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(245, 162, 0, 0.45);
 }
 
-.btn-secondary {
-  padding: 13px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
+.btn-cta-wa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 40px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 60px;
   color: var(--white);
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px;
   transition: all var(--transition);
-  white-space: nowrap;
+  cursor: pointer;
 }
 
-.btn-secondary:hover {
+.btn-cta-wa:hover {
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--gold);
   color: var(--gold);
+  transform: translateY(-5px);
 }
 
-.wa-float {
+.floating-wa {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 999;
-  width: 58px;
-  height: 58px;
-  background: linear-gradient(135deg, #25d366, #128c7e);
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-  animation: waBounce 2s infinite;
-  transition: transform var(--transition);
+  color: white;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.wa-float:hover {
-  transform: scale(1.1);
-  animation: none;
+.floating-wa:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
 }
 
 @media (max-width: 768px) {
+  .floating-wa {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
   .cta-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 30px;
+    padding: 60px 24px;
+    margin: 40px 4% 80px;
+    border-radius: 32px;
   }
 
   .cta-actions {
     flex-direction: column;
+    gap: 16px;
     width: 100%;
   }
 
-  .cta-actions a {
-    text-align: center;
+  .btn-cta-call,
+  .btn-cta-wa {
     width: 100%;
-    display: block;
-  }
-
-  .wa-float {
-    bottom: 20px;
-    right: 20px;
+    justify-content: center;
+    padding: 16px 20px;
+    font-size: 16px;
   }
 }

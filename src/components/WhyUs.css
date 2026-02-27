@@ -1,60 +1,82 @@
 .why {
-    background: linear-gradient(180deg, #0c1220 0%, var(--bg-dark) 100%);
-    padding: 90px 5%;
+    background: var(--bg-dark);
+    padding: 100px 5%;
+    position: relative;
 }
 
 .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 50px;
+    gap: 30px;
+    margin-top: 60px;
 }
 
 .why-card {
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 32px 26px;
+    border-radius: var(--radius-lg);
+    padding: 45px 35px;
     text-align: center;
-    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .why-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--border);
-    box-shadow: var(--shadow-card);
+    transform: translateY(-12px);
+    border-color: var(--gold);
+    box-shadow: var(--shadow-premium);
+}
+
+.why-card:hover::before {
+    opacity: 1;
 }
 
 .why-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(245, 162, 0, 0.1);
-    border: 1px solid rgba(245, 162, 0, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    margin: 0 auto 22px;
-    transition: background var(--transition), transform var(--transition);
+    font-size: 36px;
+    margin: 0 auto 30px;
+    transition: all 0.5s ease;
 }
 
 .why-card:hover .why-icon {
-    background: rgba(245, 162, 0, 0.2);
-    transform: scale(1.1);
+    background: var(--gold);
+    color: #000;
+    transform: rotate(10deg) scale(1.1);
+    border-color: transparent;
 }
 
 .why-card h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--white);
 }
 
 .why-card p {
-    font-size: 13px;
-    color: var(--gray);
-    line-height: 1.7;
+    font-size: 14px;
+    color: var(--white-muted);
+    line-height: 1.8;
 }
 
 @media (max-width: 1024px) {
@@ -63,7 +85,21 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .why {
+        padding: 80px 4%;
+    }
+
+    .why-grid {
+        gap: 20px;
+    }
+
+    .why-card {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 500px) {
     .why-grid {
         grid-template-columns: 1fr;
     }
