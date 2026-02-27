@@ -120,11 +120,16 @@
 
 .fleet-actions {
     display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
+.btn-enquire,
+.btn-call {
+    width: 100%;
+}
+
 .btn-enquire {
-    flex: 2;
     padding: 16px;
     background: linear-gradient(135deg, #25d366, #128c7e);
     border: none;
@@ -148,7 +153,6 @@
 }
 
 .btn-call {
-    flex: 1;
     padding: 16px;
     background: var(--glass);
     border: 1px solid var(--glass-border);
@@ -184,15 +188,6 @@
 }
 
 @media (max-width: 500px) {
-    .fleet-actions {
-        flex-direction: column;
-    }
-
-    .btn-enquire,
-    .btn-call {
-        width: 100%;
-    }
-
     .fleet-info {
         padding: 24px;
     }
