@@ -10,6 +10,7 @@ import Fleet from './components/Fleet';
 import WhyUs from './components/WhyUs';
 import Testimonials from './components/Testimonials';
 import EnquiryModal from './components/EnquiryModal';
+import TourPackages from './components/TourPackages';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
       <About />
       <Services />
       <Fleet onEnquire={handleEnquire} />
+      <TourPackages />
       <WhyUs />
       <Testimonials />
 

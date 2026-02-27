@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import logoImg from '../assets/logo.png';
 
+const navLinks = [
+    { name: 'Home', id: 'hero' },
+    { name: 'About', id: 'about' },
+    { name: 'Services', id: 'services' },
+    { name: 'Packages', id: 'packages' },
+    { name: 'Fleet', id: 'fleet' },
+    { name: 'Why Us', id: 'why' },
+    { name: 'Reviews', id: 'testimonials' },
+];
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -42,10 +52,10 @@ export default function Navbar() {
                     </div>
 
                     <ul className="nav-links">
-                        {['hero', 'about', 'services', 'fleet', 'why', 'testimonials'].map(id => (
-                            <li key={id}>
-                                <a href={`#${id}`} onClick={(e) => { e.preventDefault(); handleNavClick(id); }}>
-                                    {id === 'hero' ? 'Home' : id === 'why' ? 'Why Us' : id.charAt(0).toUpperCase() + id.slice(1)}
+                        {navLinks.map(link => (
+                            <li key={link.id}>
+                                <a href={`#${link.id}`} onClick={(e) => { e.preventDefault(); handleNavClick(link.id); }}>
+                                    {link.name}
                                 </a>
                             </li>
                         ))}
@@ -73,10 +83,10 @@ export default function Navbar() {
                     <button className="drawer-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">&times;</button>
                 </div>
                 <div className="mobile-drawer-links">
-                    {['hero', 'about', 'services', 'fleet', 'why', 'testimonials'].map(id => (
+                    {['hero', 'about', 'services', 'packages', 'fleet', 'why', 'testimonials'].map(id => (
                         <a key={id} href={`#${id}`} className="mobile-link" onClick={(e) => { e.preventDefault(); handleNavClick(id); }}>
-                            <span className="link-num">0{['hero', 'about', 'services', 'fleet', 'why', 'testimonials'].indexOf(id) + 1}</span>
-                            {id === 'hero' ? 'Home' : id === 'why' ? 'Why Choose Us' : id.charAt(0).toUpperCase() + id.slice(1)}
+                            <span className="link-num">0{['hero', 'about', 'services', 'packages', 'fleet', 'why', 'testimonials'].indexOf(id) + 1}</span>
+                            {id === 'hero' ? 'Home' : id === 'why' ? 'Why Choose Us' : id === 'packages' ? 'Tour Packages' : id.charAt(0).toUpperCase() + id.slice(1)}
                         </a>
                     ))}
                 </div>
